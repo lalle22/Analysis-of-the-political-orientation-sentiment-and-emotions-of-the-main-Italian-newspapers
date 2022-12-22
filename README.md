@@ -1,38 +1,25 @@
-# Analisi dell' orientamento politico, del sentiment e dell' emotions delle principali testate giornalistiche italiane 
+#  Analysis  
 
-Il seguente progetto ha come obbiettivo quello di analizzare l'orientamento politico e 
-il sentiment/emotions
-di diverse testate giornalistiche italiane attraverso l' analisi dei tweets e degli articoli.
+Il seguente branch effettua le analisi finali per quanto riguarda sentiment ed emotions,  sia per
+quanto concerne la creazione di un classificatore per predire l' orientamento politico di una testata
+giornalistica.
 
-### Obbiettivo e metodologie 
 
-Attraverso l' estrazione di tweets e articoli per diverse testa giornalistiche italiane, 
-cerchiamo di costruire un modello di classificazione capace di interpretare l' orientamento politico
-attraverso un analisi della similarità fra i corpus ricavati dai tweets di partiti politici appartenenti 
-a ogni area dello spettro politico, così da capire per ciascuna testata giornalistica, quale si avvicina più a essa.
-Per ciascun partito, per ciascuna testata e per ciascun orientamento, inoltre, effettuiamo un 
-un analisi del sentiment e dell' emotions.
+### Sentiment ed emotions
+Nel file 'sentiment_analysis_detecting.py' si effettua l' analisi del sentiment e delle emotions 
+per i tweet dei partiti politici e per quanto riguarda le testate giornalistiche, andando a utilizzare 
+per le emotions, i .csv precedentemente salvati con al loro interno le feature con i sentiment estratti.
 
-### Come è articolato il progetto? 
+### Random forest
 
-Il progetto si compone in 3 parti generali:
+Per classificare le osservazioni dei partiti politici si è utilizzata una Random Forest, nel file 'rf_classifier.py',
+che crea un modello andando a utilizzare 6000 osservazioni per ciascun orientamento, salvandolo nel file 'RandomForest.pickle' 
+che verrà usato per effettuare le predizioni sugli articoli dei giornali
 
-* Scraping dei tweets e degli articoli
-  - scraping dei tweets dei partiti politici 
-  - scraping dei tweets delle testate giornalistiche 
-  - scraping degli articoli collegati ai tweets per categoria 'politica' ed 'economia'
-* Tokenizzazione e pulizia dei dataset ai fini di analisi
-  - filtraggio dei tweets per categoria 
-* Analisi e modellizzazione dei dati
-  - analisi della similarità per ciascuna testata con i corpus di sinistra, di destra e neutrale
-  - creazione dei modelli di classificazione 
-  - analisi del sentiment e dell' emotions per 
-  ciascun partito, testata giornalistica e orientamento politico attraverso 
-  spiderplot
-* Test e rappresentazioni grafiche dei modelli
-  - validazione del modello 
-  - rappresentazioni grafiche 
+### Frequency distribution 
 
+Si è voluto analizzare la FreqDistr per ciascun orientamento politico, creando nel file 'frequency_distr_on_corpus.py' 
+i relativi cumulative plot prendendo come dati di input i corpus precedentemente creati nel branch data_cleaning.
 
 
 
